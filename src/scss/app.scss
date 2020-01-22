@@ -1,0 +1,298 @@
+@import '~bootstrap-vue/dist/bootstrap-vue.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+@import '~animate.css/animate.min.css';
+@import '~viewerjs/dist/viewer.css';
+
+body {
+  background-color: #fff;
+  &.admin {
+    background-color: transparent;
+  }
+}
+
+button, input {
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  };
+}
+
+.main {
+  max-width: 1440px;
+}
+
+.always_navbar {
+  position: absolute;
+  background: url("../assets/images/navbarbg.png") top center no-repeat;
+  background-size: contain;
+  top: 0;
+  width: 100%;
+  height: 220px;
+  & .always_brand {
+    margin-top: -3.5rem;
+    margin-left: 3.5rem;
+  };
+  @media (max-width: 576px) {
+    position: relative;
+    background: url("../assets/images/mobile-line.png") top center no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 220px;
+  }
+}
+
+.always_navbar_nav {
+  width: 65%;
+}
+
+.input-group-text {
+  & svg {
+    color: #fff;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.loading-overlay {
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+.loading-wrapper {
+  margin: auto;
+}
+
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.cube1, .cube2 {
+  background-color: #6610f2;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+  }
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+  }
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+  }
+  100% {
+    -webkit-transform: rotate(-360deg)
+  }
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+::-webkit-input-placeholder {
+  transition: .3s ease-in;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+::-moz-placeholder {
+  transition: .3s ease-in;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.custom-file-input {
+  &:hover {
+    cursor: pointer!important;
+  };
+  &:focus ~ .custom-file-label{
+    box-shadow: none!important;
+  }
+}
+
+.custom-file-label {
+  display: block!important;
+  width: 100%!important;
+  height: calc(1.5em + .75rem + 2px)!important;
+  text-align: left!important;
+  font-size: 1rem!important;
+  font-weight: 400!important;
+  line-height: 1.5!important;
+  color: #000!important;
+  border-radius: 0!important;
+  background: transparent!important;
+  border: none;
+  border-bottom: 1px solid #000!important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out!important;
+}
+
+
+.custom-file-input:lang(ru) ~ .custom-file-label::after {
+  content: '+';
+  background: transparent;
+  color: #000;
+}
+
+
+
+
+
+.approve-modal_img {
+  max-width: 70%!important;
+  height: auto;
+}
+
+.page-item {
+  &.active {
+    .page-link {
+      z-index: 1;
+      color: #fff!important;
+      background-color: #17a2b8!important;
+      border-color: #17a2b8!important;
+      &:focus, :active, :link {
+        box-shadow: none!important;
+      }
+    }
+  };
+  & .page-link {
+    color: #17a2b8!important;
+    border-color: #17a2b8!important;
+  }
+
+}
+
+.nav-tabs {
+  & .nav-item {
+    & .nav-link {
+      color: #495057!important;
+      &.active {
+        color: #17a2b8!important;
+      }
+    }
+  }
+}
+
+#participant {
+  & .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    color: #000;
+    &::placeholder {
+      color: #000;
+    };
+    &:focus {
+      background: none!important;
+      color: #000;
+    }
+  };
+  & .register {
+    background: linear-gradient(101.49deg, #17a2b8 -12.77%, #17a2b8 33.31%, #17a2b8 46.6%, #17a2b8 59.89%, #17a2b8 105.97%);
+    border-radius: 28px;
+    border: none;
+  };
+
+  & .mx-calendar-icon, .mx-datepicker {
+    color: #000!important;
+  }
+
+}
+
+.always_rules {
+  color: #fff;
+  text-decoration: underline;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.always_tel {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' focusable='false' data-prefix='fas' data-icon='bars' class='svg-inline--fa fa-bars fa-w-14' role='img' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'/%3E%3C/svg%3E");
+}
+
+.navbar-dark .navbar-toggler {
+  border: none;
+}
+
+#participant {
+  & .mx-input {
+    display: block !important;
+    width: 100% !important;
+    height: calc(1.5em + .75rem + 2px) !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #000 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #000 !important;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+
+    &::placeholder {
+      color: #000 !important;
+    }
+  }
+}
